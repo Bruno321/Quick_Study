@@ -29,8 +29,8 @@ const HomeScreen = () => {
             component={VerCuestionariosScreen}
             options={{
                 tabBarLabel: 'Home',
-                tabBarIcon: () => (
-                    <IconEnt name="home-outline" color={"FFFFFF"} size={28} />
+                tabBarIcon: ({color,size}) => (
+                    <IconEnt name="home-outline" color={color} size={size} />
                 ),
             }}
             />
