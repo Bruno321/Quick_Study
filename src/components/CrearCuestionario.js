@@ -74,7 +74,7 @@ const CrearCuestionario = ({setFormPage,form,setForm}) => {
 
             <TouchableOpacity 
                 style={styles.button}
-                onPress={()=>agregarPregunta()}
+                onPress={agregarPregunta}
             >
                 <Text style={styles.text}>Agregar Pregunta</Text>
             </TouchableOpacity>

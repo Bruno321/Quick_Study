@@ -3,6 +3,7 @@ package com.quick_study;
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
+import io.invertase.notifee.NotifeeApiModule;
 
 public class MainActivity extends ReactActivity {
 
@@ -12,7 +13,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "Quick_Study";
+     return NotifeeApiModule.getMainComponent("Quick_Study");
   }
 
   /**

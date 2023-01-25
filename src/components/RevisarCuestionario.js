@@ -1,22 +1,30 @@
 import React from 'react'
-import { View , Text, StyleSheet,TextInput, TouchableOpacity, ListViewComponent, ScrollView} from 'react-native'
+import { View , Text, StyleSheet,TextInput,SafeAreaView} from 'react-native'
 import { FlatList } from 'react-native-gesture-handler'
 import IconEnt  from 'react-native-vector-icons/Ionicons'
 import CardPregunta from './CardPregunta'
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const RevisarCuestionario = ({setFormPage,form,setForm}) => {
-    const handleClick = () => {
+    const handleClick = async () => {
         //guardar en memoria
-        //resetear form
-        //regresar a home
-        //en home retroaliemntar
-        //agregar para lo de materia
-        //usar async storage
-        //listar en home
-        //buscar cuestionario
-        //editar cuestionario
-        //notificaciones
-        //backgroundservice
+        try {
+            await AsyncStorage.setItem(form.titulo, JSON.stringify(form))
+            //resetear form
+            console.log("form agregado")
+            setForm({
+                titulo:"",
+                materia:"",
+                preguntas:[]
+            })
+            //regresar a home
+            //en home retroaliemntar
+
+          } catch (e) {
+            // saving error
+            console.log(e)
+          }
+        
     }
     return (
         <View style={styles.container}>
@@ -48,15 +56,13 @@ const RevisarCuestionario = ({setFormPage,form,setForm}) => {
                 />
             </View>
             <Text style={styles.text}>Preguntas</Text>
-            <ScrollView style={styles.lowerContainer}>
+            <SafeAreaView style={styles.lowerContainer}>
                 <FlatList
                     data={form.preguntas}
                     renderItem={({item})=><CardPregunta cuestionario={item}/>}
                     keyExtractor={item => item.pregunta}
                 />
-                
-                <CardPregunta cuestionario={{pregunta:"Pregunta?",respuesta:"respuesta"}}/>
-            </ScrollView>
+            </SafeAreaView>
             <View style={{...styles.footer,marginLeft:20}}>
                 <View style={styles.footerItem}>
                     <IconEnt name="arrow-back-outline" color={'white'} size={28} />
@@ -95,7 +101,8 @@ const styles = StyleSheet.create({
     },
     lowerContainer:{
         marginTop:10,
-        padding:10
+        padding:10,
+        flex: 1
     },  
     footer:{
         width:"100%",
