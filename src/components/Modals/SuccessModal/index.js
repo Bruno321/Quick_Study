@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Modal, Pressable, Text, View, Image } from 'react-native';
 import Correct from "../assets/img/correct.png";
-export default CorrectModal = () =>{
+
+export default SuccessModal = () =>{
         const [modalVisible, setModalVisible] = useState(false);
     return (
       <View style={styles.centeredView}>

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, FlatList, View, SafeAreaView } from 'react-native';
-import CardPregunta from './CardPregunta';
+import {QuizzCard} from '../../components/Cards/QuizzCard'
 
-const  CuestionarioComponent = ({data,setHandleRender}) => {
+export const QuizzInformationScreen = ({data,setHandleRender}) => {
     console.log(data)
     return(
         <View style={styles.container}> 
@@ -15,7 +15,7 @@ const  CuestionarioComponent = ({data,setHandleRender}) => {
             <SafeAreaView style={styles.area}>
                 <FlatList
                     data={data.preguntas}
-                    renderItem={({item})=><CardPregunta cuestionario={item}/>}
+                    renderItem={({item})=><QuizzCard cuestionario={item}/>}
                     keyExtractor={item => item.pregunta}
                 />
             </SafeAreaView>
@@ -23,8 +23,6 @@ const  CuestionarioComponent = ({data,setHandleRender}) => {
 
     )
 }
-
-export default CuestionarioComponent;
 
 const styles = StyleSheet.create({
     container: {

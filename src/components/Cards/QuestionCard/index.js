@@ -2,25 +2,22 @@ import React from "react";
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import IconEnt  from 'react-native-vector-icons/MaterialCommunityIcons'
 
-
-import TouchableComponent from './TouchableComponent.js';
-const CardPregunta = ({cuestionario}) =>{
-    const {pregunta,respuesta} = cuestionario
+export const QuestionCard = ({question}) =>{
+    const {questionTitle,answer} = question
     return(
         <View style = {styles.container}>
             <View style={styles.item}>
-                <Text style = {styles.titleText}>{pregunta}</Text>
+                <Text style = {styles.titleText}>{questionTitle}</Text>
                 <IconEnt name="clipboard-edit-outline" color={'white'} size={28} />
             </View>
             <View style={styles.item}>
-                <Text style = {styles.subjectText}>R= {respuesta}</Text>
+                <Text style = {styles.subjectText}>R= {answer}</Text>
                 <IconEnt name="delete-outline" color={'white'} size={28} />
             </View>
         </View>
     );
 }
 
-export default CardPregunta;
 
 const styles = StyleSheet.create({
     container: {
@@ -28,7 +25,7 @@ const styles = StyleSheet.create({
         // paddingVertical: 10,
         padding:10,
         width: 0.9 * Dimensions.get("window").width,
-        backgroundColor: "#4d617d",
+        backgroundColor: "#334155",
         borderRadius: 15,
         marginTop:20
     },

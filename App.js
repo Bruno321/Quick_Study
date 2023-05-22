@@ -1,10 +1,14 @@
-import React, {useState} from 'react';
+import React from 'react';
+
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import HomeScreen from './src/screens/HomeScreen'
+
+import {HomeScreen} from './src/screens/HomeScreen'
+import { TabNavigator } from './src/Navigation/TabNavigator';
+
 import notifee, { EventType } from '@notifee/react-native';
-import { useLinkTo } from '@react-navigation/native';
+import { QuizzContextProvider } from './src/Context/QuizzFormContext';
 
 // Elementos necesarios para la navegacion del footer
 const Tab = createBottomTabNavigator();
@@ -28,11 +32,13 @@ const App = () => {
 
   //poner todo el contexto mas abajo, hay q usarlo un nivel atras o importarlo aqui
   return (
+    <QuizzContextProvider>
       <NavigationContainer >
         <Stack.Navigator >
-          <Tab.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+          <Tab.Screen name="Home" component={TabNavigator} options={{ headerShown: false }} />
         </Stack.Navigator>
       </NavigationContainer>
+    </QuizzContextProvider>
   );
 };
 

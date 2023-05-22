@@ -1,15 +1,15 @@
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
-import CrearCuestionarioScreen from './CrearCuestionarioScreen'
-import VerCuestionariosScreen from './VerCuestionariosScreen'
-import BuscarCuestionarioScreen from './BuscarCuestionarioScreen'
+import {HomeScreen} from '../screens/HomeScreen'
+import {SearchScreen} from '../screens/SearchScreen'
+import {AddQuizzScreen} from '../screens/AddQuizzScreen'
 
 import IconEnt  from 'react-native-vector-icons/Ionicons'
 
 const Tab = createBottomTabNavigator();
 
-const HomeScreen = () => {
+export const TabNavigator = () => {
 
     return (
         <Tab.Navigator
@@ -26,7 +26,7 @@ const HomeScreen = () => {
             >
             <Tab.Screen
             name="Main"
-            component={VerCuestionariosScreen}
+            component={HomeScreen}
             options={{
                 tabBarLabel: 'Home',
                 tabBarIcon: ({color,size}) => (
@@ -36,7 +36,7 @@ const HomeScreen = () => {
             />
             <Tab.Screen
             name="Search"
-            component={BuscarCuestionarioScreen}
+            component={SearchScreen}
             options={{
                 // tabBarLabel: 'Home',
                 tabBarIcon: ({ color, size }) => (
@@ -47,7 +47,7 @@ const HomeScreen = () => {
             />
             <Tab.Screen
             name="Add"
-            component={CrearCuestionarioScreen}
+            component={AddQuizzScreen}
             options={{
                 // tabBarLabel: 'Home',
                 tabBarIcon: ({ color, size }) => (
@@ -59,5 +59,3 @@ const HomeScreen = () => {
       </Tab.Navigator>
     )
 }
-
-export default HomeScreen

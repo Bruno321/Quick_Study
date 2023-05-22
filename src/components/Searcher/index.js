@@ -3,7 +3,7 @@ import { StyleSheet, Text, TextInput, View, Dimensions } from 'react-native';
 // import { Entypo } from '@expo/vector-icons'; 
 import IconEnt  from 'react-native-vector-icons/Ionicons'
 
-const  BuscadorComponent = () => {
+export const Searcher = () => {
     return(
         <View style={styles.main}>
             <View style={styles.flexRow}>
@@ -25,8 +25,6 @@ const  BuscadorComponent = () => {
 
     )
 }
-
-export default BuscadorComponent;
 
 const styles = StyleSheet.create({
 main:{

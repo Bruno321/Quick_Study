@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, TextInput, View, Dimensions } from 'react-native';
 
-const CardCuestionario = () =>{
+export const QuizzCard = () =>{
     return(
         <View style = {styles.container}>
             <Text style = {styles.titleText}>Las palabras esdrújulas</Text>
@@ -10,8 +10,6 @@ const CardCuestionario = () =>{
         </View>
     );
 }
-
-export default CardCuestionario;
 
 const styles = StyleSheet.create({
     container: {

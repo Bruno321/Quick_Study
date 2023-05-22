@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, Button, View, Dimensions, Image } from 'react-native';
-import TouchableComponent from './TouchableComponent.js';
+import TouchableComponent from '../../TouchableComponent.js';
 
-const  ModalWrong = () => {
+export const Failmodal = () => {
     return(
         <View style = {styles.container}>
             <Image style={styles.image} source={require('../../assets/img/incorrect.png')}/>
@@ -13,8 +13,6 @@ const  ModalWrong = () => {
         </View>
     )
 }
-
-export default ModalWrong;
 
 const styles = StyleSheet.create({
     container: {

@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { View , Text, StyleSheet,SafeAreaView,FlatList, Pressable} from 'react-native'
+
 import AsyncStorage from '@react-native-async-storage/async-storage';
+
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import CuestionarioComponent from '../components/CuestionarioComponent';
+
 import notifee , {EventType } from '@notifee/react-native';
 
-const VerCuestionariosScreen = () => {
+export const HomeScreen = () => {
     async function onDisplayNotification() {
         // Request permissions (required for iOS)
         await notifee.requestPermission()
@@ -98,8 +100,8 @@ const VerCuestionariosScreen = () => {
          </SafeAreaView>
      </View>
      :
-     <CuestionarioComponent  data={data} setHandleRender={setHandleRender}/>
-    }
+                 null
+}
        </>
     )
 }
@@ -166,5 +168,3 @@ const styles = StyleSheet.create({
     }
     
 })
-
-export default VerCuestionariosScreen

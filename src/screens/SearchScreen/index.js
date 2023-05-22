@@ -1,12 +1,12 @@
 import React from 'react'
 import { View , Text, StyleSheet} from 'react-native'
-import BuscadorComponent from '../components/BuscadorComponent'
+import {Searcher} from '../../components/Searcher'
 
-const BuscarCuestionarioScreen = () => {
+export const SearchScreen = () => {
     return (
         <View  style={styles.container}>
             <Text>Buscar cuestionario</Text>
-            <BuscadorComponent />
+            <Searcher />
         </View>
     )
 }
@@ -18,4 +18,3 @@ const styles = StyleSheet.create({
   
     
 })
-export default BuscarCuestionarioScreen
